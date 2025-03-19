@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>wg-easy</Name>
+  <Repository>ghcr.io/wg-easy</Repository>
+  <Registry>https://ghcr.io/wg-easy/wg-easy:14</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>TBA</Support>
+  <Project>https://github.com/wg-easy/wg-easy</Project>
+  <License>https://github.com/wg-easy/wg-easy/blob/master/LICENSE</License>
+  <Overview>
+   # wg-easy
+  You have found the easiest way to install and manage WireGuard on any Linux host!
+  </Overview>
+  <Category>Security: Network:VPN</Category>
+  <WebUI>http://[IP]:[PORT:51821]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/wg-easy.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/EMP83/unraid-templates/main/WireGuard/WireGuard.png</Icon>
+  <ExtraParams>--cap-add NET_ADMIN --cap-add SYS_MODULE --sysctl net.ipv4.conf.all.src_valid_mark=1 --restart unless-stopped</ExtraParams>
+  <DonateText>Please head over to https://github.com/wg-easy/wg-easy?tab=readme-ov-file#donate for donations.</DonateText>
+  <DonateLink>https://github.com/sponsors/WeeJeWel</DonateLink>
+  <Date>2025-03-19</Date>
+  <Changes></Changes>
+  <Config Name="WebUI" Target="51821" Default="51821" Mode="tcp" Description="Container Port: 51821" Type="Port" Display="advanced" Required="true" Mask="false">51821</Config>
+  <Config Name="Wireguard UDP Port" Target="51820" Default="51820" Mode="udp" Description="Container Port: 51820" Type="Port" Display="advanced" Required="true" Mask="false">51820</Config>
+  <Config Name="Modules" Target="/lib/modules" Default="/lib/modules" Mode="rw" Description="Needed to load the necessary kernel modules" Type="Path" Display="always" Required="false" Mask="false">/lib/modules</Config>
+  <Config Name="Config" Target="/etc/wireguard/" Default="/mnt/cache/appdata/wg-easy" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/wg-easy</Config>
+</Container>
