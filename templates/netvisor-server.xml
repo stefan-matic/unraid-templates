@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>netvisor-server</Name>
+  <Repository>ghcr.io/mayanayza/netvisor/server:latest</Repository>
+  <Registry>ghcr.io/mayanayza/netvisor/server:latest</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>TBA</Support>
+  <Shell>bash</Shell>
+  <Project>https://github.com/mayanayza/netvisor</Project>
+  <License>https://github.com/mayanayza/netvisor/blob/main/LICENSE.md</License>
+  <Overview>Automatically discover and visually document network topology.</Overview>
+  <Category>Network:Management Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:60072]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/netvisor-server.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText>Please head over to https://buymeacoffee.com/mayanayza for donations.</DonateText>
+  <DonateLink>https://buymeacoffee.com/mayanayza</DonateLink>
+  <Date>2025-10-29</Date>
+  <Changes></Changes>
+  <Requires/>
+  <Config Name="Port" Target="60072" Default="60072" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">60072</Config>
+  <Config Name="Appdata" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netvisor/server</Config>
+  <Config Name="NETVISOR_SERVER_PORT" Target="NETVISOR_SERVER_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60072</Config>
+  <Config Name="NETVISOR_LOG_LEVEL" Target="NETVISOR_LOG_LEVEL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+  <Config Name="NETVISOR_DATABASE_URL" Target="NETVISOR_DATABASE_URL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="NETVISOR_WEB_EXTERNAL_PATH" Target="NETVISOR_WEB_EXTERNAL_PATH" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/app/static</Config>
+  <Config Name="NETVISOR_INTEGRATED_DAEMON_URL" Target="NETVISOR_INTEGRATED_DAEMON_URL" Default="http://172.17.0.1:60073" Mode="" Description="172.17.0.1 is Docker's default bridge gateway. If your's is different, make sure to change it." Type="Variable" Display="always" Required="false" Mask="false">http://172.17.10.1:60073</Config>
+  <TailscaleStateDir/>
+</Container>

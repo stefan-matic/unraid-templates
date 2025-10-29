@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>netvisor-daemon</Name>
+  <Repository>ghcr.io/mayanayza/netvisor/daemon:latest</Repository>
+  <Registry>ghcr.io/mayanayza/netvisor/daemon:latest</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>TBA</Support>
+  <Shell>bash</Shell>
+  <Project>https://github.com/mayanayza/netvisor</Project>
+  <License>https://github.com/mayanayza/netvisor/blob/main/LICENSE.md</License>
+  <Overview>Automatically discover and visually document network topology.</Overview>
+  <Category>Network:Management Network:Other</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/netvisor-daemon.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText>Please head over to https://buymeacoffee.com/mayanayza for donations.</DonateText>
+  <DonateLink>https://buymeacoffee.com/mayanayza</DonateLink>
+  <Date>2025-10-29</Date>
+  <Changes></Changes>
+  <Requires/>
+  <Config Name="NETVISOR_SERVER_TARGET" Target="NETVISOR_SERVER_TARGET" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://</Config>
+  <Config Name="NETVISOR_SERVER_PORT" Target="NETVISOR_SERVER_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60072</Config>
+  <Config Name="NETVISOR_DAEMON_PORT" Target="NETVISOR_DAEMON_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60073</Config>
+  <Config Name="NETVISOR_BIND_ADDRESS" Target="NETVISOR_BIND_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="NETVISOR_LOG_LEVEL" Target="NETVISOR_LOG_LEVEL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+  <Config Name="NETVISOR_HEARTBEAT_INTERVAL" Target="NETVISOR_HEARTBEAT_INTERVAL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">30</Config>
+  <Config Name="Docker access" Target="/var/run/docker.sock" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="NETVISOR_NAME" Target="NETVISOR_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">UNRAID</Config>
+  <Config Name="NETVISOR_CONCURRENT_SCANS" Target="NETVISOR_CONCURRENT_SCANS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
+  <Config Name="NETVISOR_NETWORK_ID" Target="NETVISOR_NETWORK_ID" Default="" Mode="" Description="Get from netvisor-server > Discovery > Create Daemon > Option 2 > NETVISOR_NETWORK_ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
