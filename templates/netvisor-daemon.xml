@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>true</Privileged>
-  <Support>TBA</Support>
+  <Support>https://forums.unraid.net/topic/194592-support-netvisor-automatically-discover-and-visually-document-network-topology/</Support>
   <Shell>bash</Shell>
   <Project>https://github.com/mayanayza/netvisor</Project>
   <License>https://github.com/mayanayza/netvisor/blob/main/LICENSE.md</License>
@@ -15,7 +15,7 @@
   <Category>Network:Management Network:Other</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/netvisor-daemon.xml</TemplateURL>
-  <Icon/>
+  <Icon>https://raw.githubusercontent.com/mayanayza/netvisor/3655327ddf0b754df03a466b81cf92d32756a9ea/ui/static/logos/netvisor-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DonateText>Please head over to https://buymeacoffee.com/mayanayza for donations.</DonateText>
