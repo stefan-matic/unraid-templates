@@ -32,6 +32,7 @@
   <Config Name="Docker access" Target="/var/run/docker.sock" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="NETVISOR_NAME" Target="NETVISOR_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">UNRAID</Config>
   <Config Name="NETVISOR_CONCURRENT_SCANS" Target="NETVISOR_CONCURRENT_SCANS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
-  <Config Name="NETVISOR_NETWORK_ID" Target="NETVISOR_NETWORK_ID" Default="" Mode="" Description="Get from netvisor-server > Discovery > Create Daemon > Option 2 > NETVISOR_NETWORK_ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="NETVISOR_NETWORK_ID" Target="NETVISOR_NETWORK_ID" Default="" Mode="" Description="Get from netvisor-server > Daemons > Create Daemon > Generate > NETVISOR_NETWORK_ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="NETVISOR_DAEMON_API_KEY" Target="NETVISOR_DAEMON_API_KEY" Default="" Mode="" Description="Get from netvisor-server > Daemons > Create Daemon > Generate > NETVISOR_DAEMON_API_KEY" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <TailscaleStateDir/>
 </Container>
