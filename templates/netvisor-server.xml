@@ -9,7 +9,16 @@
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/194592-support-netvisor-automatically-discover-and-visually-document-network-topology/</Support>
   <Project>https://github.com/mayanayza/netvisor</Project>
-  <Overview>Automatically discover and visually document network topology.</Overview>
+  <Overview>Automatically discover and visually document network topology.&#13;
+&#13;
+Requirements:&#13;
+The server requires a postgres database.&#13;
+&#13;
+The NETVISOR_DATABASE_URL needs to match your postgres&#13;
+&#13;
+Example:&#13;
+postgresql://username:password@hostname:port/database&#13;
+postgresql://netvisor:password123@db:5432/netvisor</Overview>
   <Category>Network:Management Network:Other</Category>
   <WebUI>http://[IP]:[PORT:60072]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/netvisor-server.xml</TemplateURL>
@@ -25,7 +34,7 @@
   <Config Name="Appdata" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netvisor/server</Config>
   <Config Name="NETVISOR_SERVER_PORT" Target="NETVISOR_SERVER_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60072</Config>
   <Config Name="NETVISOR_LOG_LEVEL" Target="NETVISOR_LOG_LEVEL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
-  <Config Name="NETVISOR_DATABASE_URL" Target="NETVISOR_DATABASE_URL" Default="" Mode="" Description="The full postgres URL:&#13;&#10;postgresql://username:password@hostname:port/database" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="NETVISOR_DATABASE_URL" Target="NETVISOR_DATABASE_URL" Default="" Mode="" Description="The full postgres URL to your database:&#13;&#10;postgresql://username:password@hostname:port/database" Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="NETVISOR_WEB_EXTERNAL_PATH" Target="NETVISOR_WEB_EXTERNAL_PATH" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/app/static</Config>
   <Config Name="NETVISOR_INTEGRATED_DAEMON_URL" Target="NETVISOR_INTEGRATED_DAEMON_URL" Default="http://172.17.0.1:60073" Mode="" Description="172.17.0.1 is Docker's default bridge gateway. If yours is different, make sure to change it." Type="Variable" Display="always" Required="false" Mask="false">http://172.17.10.1:60073</Config>
   <TailscaleStateDir/>
