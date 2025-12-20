@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>scanopy-server</Name>
-  <Repository>gghcr.io/scanopy/scanopy/server:latest</Repository>
+  <Repository>ghcr.io/scanopy/scanopy/server:latest</Repository>
   <Registry>https://github.com/scanopy/scanopy/pkgs/container/scanopy%2Fserver</Registry>
   <Network>bridge</Network>
   <MyIP/>
