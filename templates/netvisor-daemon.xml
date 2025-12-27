@@ -23,16 +23,18 @@
   <Date>2025-10-29</Date>
   <Changes></Changes>
   <Requires/>
-  <Config Name="SCANOPY_SERVER_TARGET" Target="SCANOPY_SERVER_TARGET" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://</Config>
-  <Config Name="SCANOPY_SERVER_PORT" Target="SCANOPY_SERVER_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60072</Config>
-  <Config Name="SCANOPY_DAEMON_PORT" Target="SCANOPY_DAEMON_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">60073</Config>
-  <Config Name="SCANOPY_BIND_ADDRESS" Target="SCANOPY_BIND_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
-  <Config Name="SCANOPY_LOG_LEVEL" Target="SCANOPY_LOG_LEVEL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
-  <Config Name="SCANOPY_HEARTBEAT_INTERVAL" Target="SCANOPY_HEARTBEAT_INTERVAL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">30</Config>
-  <Config Name="Docker access" Target="/var/run/docker.sock" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="SCANOPY_NAME" Target="SCANOPY_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">UNRAID</Config>
-  <Config Name="SCANOPY_CONCURRENT_SCANS" Target="SCANOPY_CONCURRENT_SCANS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
-  <Config Name="SCANOPY_NETWORK_ID" Target="SCANOPY_NETWORK_ID" Default="" Mode="" Description="Get from scanopy-server > Daemons > Create Daemon > Generate > SCANOPY_NETWORK_ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="SCANOPY_DAEMON_API_KEY" Target="SCANOPY_DAEMON_API_KEY" Default="" Mode="" Description="Get from scanopy-server > Daemons > Create Daemon > Generate > SCANOPY_DAEMON_API_KEY" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Config" Target="/root/.config/daemon" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/scanopy/daemon</Config>
+  <Config Name="Docker access" Target="/var/run/docker.sock" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Server URL" Target="SCANOPY_SERVER_URL" Default="" Mode="" Description="Or use a domain name if behind reverse proxy" Type="Variable" Display="always" Required="false" Mask="false">http://YOUR_SCANOPY_SERVER_IP:60072</Config>
+  <Config Name="Mode" Target="SCANOPY_MODE" Default="" Mode="" Description="Pull: daemon polls server.&#13;&#10;Push: server initiates scans (daemon must be reachable)" Type="Variable" Display="always" Required="false" Mask="false">Push</Config>
+  <Config Name="API Key" Target="SCANOPY_DAEMON_API_KEY" Default="" Mode="" Description="Get from scanopy-server > Daemons > Create Daemon > Generate > SCANOPY_DAEMON_API_KEY" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Network ID" Target="SCANOPY_NETWORK_ID" Default="" Mode="" Description="UUID of the network to scan. Get from scanopy-server > Daemons > Create Daemon > Generate > SCANOPY_NETWORK_ID" Type="Variable" Display="always" Required="true" Mask="false">1881e7fa-b4b4-4227-be49-265c98f87b88</Config>
+  <Config Name="Daemon URL" Target="SCANOPY_DAEMON_URL" Default="" Mode="" Description="Public URL where server can reach daemon (Push mode only)" Type="Variable" Display="always" Required="false" Mask="false">http://10.100.20.250:60073</Config>
+  <Config Name="Daemon Port" Target="SCANOPY_DAEMON_PORT" Default="" Mode="" Description="Port for daemon to listen on" Type="Variable" Display="always" Required="false" Mask="false">60073</Config>
+  <Config Name="Bind Address" Target="SCANOPY_BIND_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="Daemon Name" Target="SCANOPY_NAME" Default="" Mode="" Description="Name displayed under scanopy-server > Daemons" Type="Variable" Display="always" Required="false" Mask="false">UNRAID</Config>
+  <Config Name="Log Level" Target="SCANOPY_LOG_LEVEL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+  <Config Name="Concurrent Scans" Target="SCANOPY_CONCURRENT_SCANS" Default="" Mode="" Description="Maximum parallel host scans" Type="Variable" Display="always" Required="false" Mask="false">15</Config>
+  <Config Name="Heartbeat Interval" Target="SCANOPY_HEARTBEAT_INTERVAL" Default="" Mode="" Description="Seconds between heartbeats/work requests" Type="Variable" Display="always" Required="false" Mask="false">30</Config>
   <TailscaleStateDir/>
 </Container>
