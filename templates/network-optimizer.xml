@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>network-optimizer</Name>
+  <Repository>ghcr.io/ozark-connect/network-optimizer:latest</Repository>
+  <Registry>https://github.com/ozark-connect/network-optimizer/pkgs/container/network-optimizer</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ozark-connect/network-optimizer</Support>
+  <Project>https://github.com/ozark-connect/network-optimizer</Project>
+  <Overview>Network Optimizer - Automated network performance monitoring and optimization platform.&#13;
+&#13;
+Features:&#13;
+- Network performance monitoring and analysis&#13;
+- Client speed test integration&#13;
+- Path analysis and optimization&#13;
+- Agent deployment and management&#13;
+&#13;
+Requirements:&#13;
+- HOST_IP or HOST_NAME must be set for proper operation&#13;
+- Companion speedtest container recommended for full functionality</Overview>
+  <Category>Network:Management Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:8042]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/network-optimizer.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Ozark-Connect/NetworkOptimizer/refs/heads/main/src/OpenSpeedTest/assets/images/icons/android-chrome-192x192.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8042" Default="8042" Mode="tcp" Description="Port for accessing the Network Optimizer web interface" Type="Port" Display="always" Required="true" Mask="false">8042</Config>
+  <Config Name="Data Directory" Target="/app/data" Default="/mnt/user/appdata/network-optimizer/data" Mode="rw" Description="SQLite database, configs, and license files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/network-optimizer/data</Config>
+  <Config Name="SSH Keys Directory" Target="/app/ssh-keys" Default="/mnt/user/appdata/network-optimizer/ssh-keys" Mode="ro" Description="Optional: SSH keys for agent deployment" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/network-optimizer/ssh-keys</Config>
+  <Config Name="Logs Directory" Target="/app/logs" Default="/mnt/user/appdata/network-optimizer/logs" Mode="rw" Description="Application logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/network-optimizer/logs</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/Chicago" Mode="" Description="Timezone setting" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="Bind Localhost Only" Target="BIND_LOCALHOST_ONLY" Default="false" Mode="" Description="Set to true to bind to localhost only (for reverse proxy)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="App Password" Target="APP_PASSWORD" Default="" Mode="" Description="Optional: Application password for authentication" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Host IP" Target="HOST_IP" Default="" Mode="" Description="Host IP address for path analysis and CORS (required for client speed tests)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Host Name" Target="HOST_NAME" Default="" Mode="" Description="Host name for path analysis and CORS (required for client speed tests)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Reverse Proxied Host Name" Target="REVERSE_PROXIED_HOST_NAME" Default="" Mode="" Description="Reverse proxy hostname (e.g., optimizer.example.com) - overrides HOST_NAME for API URLs" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="OpenSpeedTest Port" Target="OPENSPEEDTEST_PORT" Default="3005" Mode="" Description="Port where OpenSpeedTest is running" Type="Variable" Display="always" Required="false" Mask="false">3005</Config>
+  <Config Name="OpenSpeedTest Host" Target="OPENSPEEDTEST_HOST" Default="" Mode="" Description="OpenSpeedTest host for CORS configuration" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="OpenSpeedTest HTTPS" Target="OPENSPEEDTEST_HTTPS" Default="false" Mode="" Description="Set to true if OpenSpeedTest uses HTTPS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="OpenSpeedTest HTTPS Port" Target="OPENSPEEDTEST_HTTPS_PORT" Default="443" Mode="" Description="HTTPS port for OpenSpeedTest" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="iperf3 Server Enabled" Target="IPERF3_SERVER_ENABLED" Default="false" Mode="" Description="Enable to accept client-initiated speed tests on port 5201" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Log Level" Target="LOG_LEVEL" Default="Information" Mode="" Description="Logging level: Trace, Debug, Information, Warning, Error, Critical" Type="Variable" Display="always" Required="false" Mask="false">Information</Config>
+  <Config Name="App Log Level" Target="APP_LOG_LEVEL" Default="Information" Mode="" Description="Network Optimizer specific log level" Type="Variable" Display="always" Required="false" Mask="false">Information</Config>
+  <Config Name="Demo Mode Mappings" Target="DEMO_MODE_MAPPINGS" Default="" Mode="" Description="Optional: Demo mode configuration" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="InfluxDB URL" Target="INFLUXDB_URL" Default="" Mode="" Description="Optional: InfluxDB URL for metrics storage (e.g., http://localhost:8086)" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="InfluxDB Token" Target="INFLUXDB_TOKEN" Default="" Mode="" Description="Optional: InfluxDB authentication token" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="InfluxDB Organization" Target="INFLUXDB_ORG" Default="network-optimizer" Mode="" Description="Optional: InfluxDB organization name" Type="Variable" Display="advanced" Required="false" Mask="false">network-optimizer</Config>
+  <Config Name="InfluxDB Bucket" Target="INFLUXDB_BUCKET" Default="network_optimizer" Mode="" Description="Optional: InfluxDB bucket name for storing metrics" Type="Variable" Display="advanced" Required="false" Mask="false">network_optimizer</Config>
+  <TailscaleStateDir/>
+</Container>

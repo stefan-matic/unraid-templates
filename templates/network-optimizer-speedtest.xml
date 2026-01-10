@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>network-optimizer-speedtest</Name>
+  <Repository>ghcr.io/ozark-connect/speedtest:latest</Repository>
+  <Registry>https://github.com/ozark-connect/speedtest/pkgs/container/speedtest</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ozark-connect/network-optimizer</Support>
+  <Project>https://github.com/ozark-connect/network-optimizer</Project>
+  <Overview>Network Optimizer Speed Test - Customized OpenSpeedTest component that integrates with Network Optimizer.&#13;
+&#13;
+This is a companion container for Network Optimizer that provides:&#13;
+- Client-side speed testing capabilities&#13;
+- Automatic result reporting to Network Optimizer&#13;
+- Web-based speed test interface&#13;
+&#13;
+Requirements:&#13;
+- Network Optimizer container must be running&#13;
+- HOST_IP or HOST_NAME must be set for result reporting</Overview>
+  <Category>Network:Management Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:3005]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/stefan-matic/unraid-templates/main/templates/network-optimizer-speedtest.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Ozark-Connect/NetworkOptimizer/refs/heads/main/src/OpenSpeedTest/assets/images/icons/android-chrome-192x192.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="3000" Default="3005" Mode="tcp" Description="Port for accessing the speed test web interface" Type="Port" Display="always" Required="true" Mask="false">3005</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/Chicago" Mode="" Description="Timezone setting" Type="Variable" Display="always" Required="false" Mask="false">America/Chicago</Config>
+  <Config Name="Host Name" Target="HOST_NAME" Default="" Mode="" Description="Host name for URL construction and host enforcement redirect" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Host IP" Target="HOST_IP" Default="" Mode="" Description="Host IP for URL construction" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="OpenSpeedTest Port" Target="OPENSPEEDTEST_PORT" Default="3005" Mode="" Description="Port number for OpenSpeedTest (should match WebUI Port)" Type="Variable" Display="always" Required="false" Mask="false">3005</Config>
+  <Config Name="OpenSpeedTest Host" Target="OPENSPEEDTEST_HOST" Default="" Mode="" Description="OpenSpeedTest host configuration" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="OpenSpeedTest HTTPS" Target="OPENSPEEDTEST_HTTPS" Default="false" Mode="" Description="Set to true if using HTTPS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="OpenSpeedTest HTTPS Port" Target="OPENSPEEDTEST_HTTPS_PORT" Default="443" Mode="" Description="HTTPS port if using HTTPS" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="Reverse Proxied Host Name" Target="REVERSE_PROXIED_HOST_NAME" Default="" Mode="" Description="Reverse proxy hostname for result reporting URL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
